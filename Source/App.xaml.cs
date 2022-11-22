@@ -1,0 +1,30 @@
+﻿using Source.Repositories.Abstracts;
+using Source.Repositories.Concretes;
+using Source.ViewModels;
+using Source.Views;
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows;
+
+namespace Source
+{
+    public partial class App : Application
+    {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            IUserRepository _userRepository = new FakeUserRepository();
+            MainViewModel mainViewModel = new(_userRepository);
+
+            MainView mainView = new();
+            mainView.DataContext = mainViewModel;
+
+
+            mainView.Show();
+
+        }
+    }
+}
