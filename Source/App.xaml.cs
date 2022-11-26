@@ -14,7 +14,7 @@ namespace Source
 {
     public partial class App : Application
     {
-        protected override void OnStartup(StartupEventArgs e)
+        private void Application_Startup(object sender, StartupEventArgs e)
         {
             IUserRepository _userRepository = new FakeUserRepository();
             MainViewModel mainViewModel = new(_userRepository);
@@ -24,7 +24,6 @@ namespace Source
 
 
             mainView.Show();
-
         }
     }
 }

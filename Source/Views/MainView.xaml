@@ -60,18 +60,32 @@
         </TextBox>
 
 
-        <Button
-            Grid.Row="5"
-            FontSize="25"
-            Margin="90 20"
-            FontWeight="Bold"
-            Background="{x:Null}"
-            BorderBrush="Red"
-            Command="{Binding LoginCommand}"
-            >
-            Log in
-        </Button>
-        
+        <StackPanel Grid.Row="5" Orientation="Horizontal">
+
+            <Button
+                Grid.Row="5"
+                FontSize="25"
+                Width="150"
+                Margin="30 20"
+                FontWeight="Bold"
+                Background="{x:Null}"
+                BorderBrush="Red"
+                Command="{Binding RegisterCommand}">
+                Sign up
+            </Button>
+
+            <Button
+                FontSize="25"
+                Margin="1 20"
+                Width="150"
+                FontWeight="Bold"
+                Background="{x:Null}"
+                BorderBrush="Red"
+                Command="{Binding LoginCommand}">
+                Log in
+            </Button>
+
+        </StackPanel>
 
     </Grid>
 </Window>
